@@ -1,0 +1,5 @@
+adjust locations of some of the maps
+    - toner, swiss_ski, terrain, klokantech_3d
+
+automatic update of github styles instead of my hard copies
+add swiss ski, vintage and waam to my mapbox to get it to work

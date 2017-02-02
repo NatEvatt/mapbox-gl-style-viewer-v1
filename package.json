@@ -1,0 +1,14 @@
+{
+  "name": "mapbox-gl-style-viewer",
+  "version": "1.0.0",
+  "description": "this is an opensource project for viewing mapbox-gl-styles",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "mapbox-gl"
+  ],
+  "author": "Nat Evatt",
+  "license": "ISC"
+}
