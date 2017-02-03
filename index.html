@@ -1,17 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8' />
     <title>OpenMapTiles OSM Bright style</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.js'></script>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' />
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.js'></script>
+
+
     <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #map {
+            position: absolute;
+            top: 50px;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        #currentBasemapTitle {
+            float: left;
+            height: 20px;
+            padding: 15px 15px;
+            font-size: 18px;
+            line-height: 20px;
+            color: #777;
+            margin-top: -8px;
+            margin-left: 100px;
+        }
     </style>
 </head>
+
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Mapbox-GL-Style-Viewer</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <form class="navbar-form navbar-left">
+                    <div id="currentBasemapTitle">Current Basemap: <span id="basemapSpan">Positron</span></div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Basemap <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" id="dark_matter" class="basemapSelection">Dark Matter</a></li>
+                            <li><a href="#" id="fiord_color" class="basemapSelection">Fiord Color</a></li>
+                            <li><a href="#" id="klokantech_3D" class="basemapSelection">Klokantech 3D</a></li>
+                            <li><a href="#" id="klokantech_basic" class="basemapSelection">Klokantech Basic</a></li>
+                            <li><a href="#" id="klokantech_terrain" class="basemapSelection">Klokantech Terrain</a></li>
+                            <li><a href="#" id="mapbox_basic" class="basemapSelection">Mapbox Basic</a></li>
+                            <li><a href="#" id="mapbox_bright" class="basemapSelection">Mapbox Bright</a></li>
+                            <li><a href="#" id="osm_bright" class="basemapSelection">OSM Bright</a></li>
+                            <li><a href="#" id="positron" class="basemapSelection">Positron</a></li>
+                            <li><a href="#" id="swiss_ski" class="basemapSelection">Swiss Ski</a></li>
+                            <li><a href="#" id="toner" class="basemapSelection">Toner</a></li>
+                            <li><a href="#" id="vintage" class="basemapSelection">Vintage</a></li>
+                            <li><a href="#" id="whaam" class="basemapSelection">Whaam</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
     <div id='map'></div>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoibmF0ZXZhdHQiLCJhIjoiR1hVR1ZIdyJ9.gFwSyghJZIERfjLkzgTx6A';
@@ -21,6 +93,20 @@
             center: [-121.998869, 36.972969],
             zoom: 11
         });
+
+        $(function () {
+            $(".basemapSelection").on("click", function(){
+                var selectedBasemap = $(this).text();
+                var basemapId = $(this).attr('id');
+                console.log('something was selected ' + selectedBasemap);
+                $("#basemapSpan").text(selectedBasemap);
+                map.setStyle("styles/" + basemapId + ".json");
+            })
+            
+        });
     </script>
+
+
 </body>
+
 </html>
