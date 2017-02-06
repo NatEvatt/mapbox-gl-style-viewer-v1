@@ -3,14 +3,14 @@
 
 <head>
     <meta charset='utf-8' />
-    <title>Mapbox-GL Style Viewer</title>
+    <title>Mapbox GL Style Viewer</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' />
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.js'></script>
-
+    
 
     <style>
         body {
@@ -59,7 +59,6 @@
                     <div id="currentBasemapTitle">Current Basemap: <span id="basemapSpan">Positron</span></div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Basemap <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -86,26 +85,17 @@
     </nav>
     <div id='map'></div>
     <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoibmF0ZXZhdHQiLCJhIjoiR1hVR1ZIdyJ9.gFwSyghJZIERfjLkzgTx6A';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'styles/swiss_ski.json',
-            center: [7.965328, 46.609505],
-//            center: [-121.998869, 36.972969],
-            zoom: 12
-        });
+
 
         $(function () {
             $(".basemapSelection").on("click", function(){
-                var selectedBasemap = $(this).text();
-                var basemapId = $(this).attr('id');
-                console.log('something was selected ' + selectedBasemap);
-                $("#basemapSpan").text(selectedBasemap);
-                map.setStyle("styles/" + basemapId + ".json");
+                changeBasemap(this);
+                
             })
             
         });
     </script>
+    <script src='scripts.js'></script>
 
 
 </body>
