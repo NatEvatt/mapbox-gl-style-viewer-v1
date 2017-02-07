@@ -4,9 +4,9 @@ var map = new mapboxgl.Map({
     style: 'styles/klokantech_terrain.json',
     center: [-121.998869, 36.972969],
     pitch: 1,
-    //            center: [-121.998869, 36.972969],
     zoom: 11
 });
+map.addControl(new mapboxgl.NavigationControl());
 
 function changeBasemap(selectedItem) {
 
