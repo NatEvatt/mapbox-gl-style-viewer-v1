@@ -10,5 +10,12 @@
     "mapbox-gl"
   ],
   "author": "Nat Evatt",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1"
+  },
+  "dependencies": {
+    "jszip": "^3.1.3"
+  }
 }
