@@ -1,5 +1,12 @@
-adjust locations of some of the maps
+XX - adjust locations of some of the maps
     - toner, swiss_ski, terrain, klokantech_3d
 
 automatic update of github styles instead of my hard copies
-add swiss ski, vintage and waam to my mapbox to get it to work
+XX - add swiss ski, vintage and waam to my mapbox to get it to work
+
+create config app to hold api keys
+get gulp working to have src, dist/dev, dist/prod
+get watch working
+get download of styles working jszip
+cretae config file of styles
+get modules and browserify working

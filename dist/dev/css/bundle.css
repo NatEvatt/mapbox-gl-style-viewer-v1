@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+}
+
+#currentBasemapTitle {
+    float: left;
+    height: 20px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    color: #777;
+    margin-top: -8px;
+    margin-left: 100px;
+}
+
+.navbar {
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    form {
+        display: none;
+    }
+}

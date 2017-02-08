@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Mapbox GL Style Viewer</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='style.css' rel='stylesheet' />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.js'></script>
+    
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Mapbox-GL-Style-Viewer</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <form class="navbar-form navbar-left">
+                    <div id="currentBasemapTitle">Current Basemap: <span id="basemapSpan">Positron</span></div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Basemap <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" id="dark_matter" class="basemapSelection">Dark Matter</a></li>
+                            <li><a href="#" id="fiord_color" class="basemapSelection">Fiord Color</a></li>
+                            <li><a href="#" id="klokantech_3D" class="basemapSelection">Klokantech 3D</a></li>
+                            <li><a href="#" id="klokantech_basic" class="basemapSelection">Klokantech Basic</a></li>
+                            <li><a href="#" id="klokantech_terrain" class="basemapSelection">Klokantech Terrain</a></li>
+                            <li><a href="#" id="mapbox_basic" class="basemapSelection">Mapbox Basic</a></li>
+                            <li><a href="#" id="mapbox_bright" class="basemapSelection">Mapbox Bright</a></li>
+                            <li><a href="#" id="_dark-v9" class="basemapSelection">Mapbox Dark</a></li>
+                            <li><a href="#" id="_light-v9" class="basemapSelection">Mapbox Light</a></li>
+                            <li><a href="#" id="_outdoors-v9" class="basemapSelection">Mapbox Outdoors</a></li>
+                            <li><a href="#" id="_satellite-streets-v9" class="basemapSelection">Mapbox Satellite-Street</a></li>
+                            <li><a href="#" id="satellite-v9" class="basemapSelection">Mapbox Satellite</a></li>
+                            <li><a href="#" id="_streets-v9" class="basemapSelection">Mapbox Streets</a></li>
+                            <li><a href="#" id="osm_bright" class="basemapSelection">OSM Bright</a></li>
+                            <li><a href="#" id="positron" class="basemapSelection">Positron</a></li>
+                            <li><a href="#" id="swiss_ski" class="basemapSelection">Swiss Ski</a></li>
+                            <li><a href="#" id="toner" class="basemapSelection">Toner</a></li>
+                            <li><a href="#" id="vintage" class="basemapSelection">Vintage</a></li>
+                            <li><a href="#" id="whaam" class="basemapSelection">Whaam</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id='map'></div>
+    <script>
+
+
+        $(function () {
+            $(".basemapSelection").on("click", function(){
+                changeBasemap(this);
+                
+            })
+            
+        });
+    </script>
+    <script src='scripts.js'></script>
+
+
+</body>
+
+</html>
