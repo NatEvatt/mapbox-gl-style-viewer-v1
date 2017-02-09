@@ -7,15 +7,10 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' />
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.css' rel='stylesheet' />
-    <link href='style.css' rel='stylesheet' />
+    <link href='css/bundle.css' rel='stylesheet' />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.js'></script>
-    
-
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -70,19 +65,17 @@
         <!-- /.container-fluid -->
     </nav>
     <div id='map'></div>
+
+    <script src='scripts/bundle.js'></script>
     <script>
+        $(document).ready(function () {
+            $MyLib.MapFunctions.initializeMap();
 
-
-        $(function () {
-            $(".basemapSelection").on("click", function(){
-                changeBasemap(this);
-                
+            $(".basemapSelection").on("click", function () {
+                $MyLib.MapFunctions.changeBasemap(this);
             })
-            
         });
     </script>
-    <script src='scripts.js'></script>
-
 
 </body>
 

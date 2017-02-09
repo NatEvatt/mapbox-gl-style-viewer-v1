@@ -27,6 +27,18 @@ var config = {
     }
 };
 
+//gulp.task('js', function () {
+//    browserify(config.paths.mainJs, {
+//        standalone: '$2NLib'
+//    })
+//    .bundle()
+//    .pipe(source('bundle.js'))
+//    .pipe(gutil.env.prod ? streamify(uglify()) : gutil.noop())
+//    .on('error', logError)
+//    .pipe(gulp.dest(config.paths.dist + '/scripts'));
+//});
+
+
 gulp.task('js', function () {
     browserify(config.paths.mainJs, {
         standalone: '$MyLib'
@@ -45,14 +57,21 @@ gulp.task('css', function () {
         .pipe(gulp.dest(config.paths.dist + '/css'));
 });
 
+gulp.task('styles', function () {
+    gulp.src(config.paths.styles)
+        .pipe(gulp.dest(config.paths.dist + '/styles'));
+});
+
 gulp.task('html', function () {
     gulp.src(config.paths.html)
         .pipe(gulp.dest(config.paths.dist));
 });
 
 gulp.task('watch', function () {
-    gulp.watch(config.paths.html, ['nunjucks.render']);
-    gulp.watch(config.paths.precompiled, ['nunjucks.precompile']);
+//    gulp.watch(config.paths.html, ['nunjucks.render']);
+//    gulp.watch(config.paths.precompiled, ['nunjucks.precompile']);
+    gulp.watch(config.paths.styles, ['styles']);
+    gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.js, ['js']);
     gulp.watch(config.paths.php, ['php']);
     gulp.watch(config.paths.css, ['css']);
@@ -81,7 +100,7 @@ gulp.task('nunjucks.precompile', function () {
 
 gulp.task('nunjucks', ['nunjucks.render', 'nunjucks.precompile']);
 
-gulp.task('default', ['html', 'js', 'css', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'watch', 'styles']);
 
 // to minify:
 //      gulp build --prod
