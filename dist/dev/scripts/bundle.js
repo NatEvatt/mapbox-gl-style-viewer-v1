@@ -1,4 +1,16 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.$MyLib = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+//"use strict";
+
+var AppConfig = function () {
+
+    return {
+        "mapboxApiKey": "pk.eyJ1IjoibmF0ZXZhdHQiLCJhIjoiR1hVR1ZIdyJ9.gFwSyghJZIERfjLkzgTx6A",
+        "openMapTilesApiKey": "iCDpHi9gsjf1TnT0iI1T"
+    };
+};
+
+module.exports = AppConfig();
+},{}],2:[function(require,module,exports){
 "use strict";
 
 var MapFunctions = require('./mapFunctions');
@@ -13,7 +25,7 @@ var Main = function () {
 
 module.exports = Main();
 
-},{"./mapFunctions":3}],2:[function(require,module,exports){
+},{"./mapFunctions":4}],3:[function(require,module,exports){
 "user strict";
 
 var MapConfig = function () {
@@ -65,17 +77,18 @@ var MapConfig = function () {
 };
 
 module.exports = MapConfig();
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 "use strict";
 
 var MapConfig = require("./mapConfig");
+var AppConfig = require("../../appConfig");
 
 var MapFunctions = function () {
     
     var map;
 
     var initializeMap = function () {
-        mapboxgl.accessToken = 'pk.eyJ1IjoibmF0ZXZhdHQiLCJhIjoiR1hVR1ZIdyJ9.gFwSyghJZIERfjLkzgTx6A';
+        mapboxgl.accessToken = "pk.eyJ1IjoibmF0ZXZhdHQiLCJhIjoiR1hVR1ZIdyJ9.gFwSyghJZIERfjLkzgTx6A";
         map = new mapboxgl.Map({
             container: 'map',
             style: 'styles/klokantech_terrain.json',
@@ -120,5 +133,5 @@ var MapFunctions = function () {
 };
 
 module.exports = MapFunctions();
-},{"./mapConfig":2}]},{},[1])(1)
+},{"../../appConfig":1,"./mapConfig":3}]},{},[2])(2)
 });

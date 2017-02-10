@@ -1,13 +1,14 @@
 "use strict";
 
 var MapConfig = require("./mapConfig");
+var AppConfig = require("../../appConfig");
 
 var MapFunctions = function () {
     
     var map;
 
     var initializeMap = function () {
-        mapboxgl.accessToken = 'pk.eyJ1IjoibmF0ZXZhdHQiLCJhIjoiR1hVR1ZIdyJ9.gFwSyghJZIERfjLkzgTx6A';
+        mapboxgl.accessToken = "@MapboxApiKey@";
         map = new mapboxgl.Map({
             container: 'map',
             style: 'styles/klokantech_terrain.json',

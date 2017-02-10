@@ -1,0 +1,11 @@
+//"use strict";
+
+var AppConfig = function () {
+
+    return {
+        "mapboxApiKey": "Your Mapbox api key here",
+        "openMapTilesApiKey": "Your OpenMaptiles Api key here"
+    };
+};
+
+module.exports = AppConfig();

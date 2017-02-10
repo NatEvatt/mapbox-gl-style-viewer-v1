@@ -8,6 +8,8 @@ var concat = require('gulp-concat'); // Concatenates files
 var cssnano = require('gulp-cssnano'); // Minify CSS with cssnano
 var source = require('vinyl-source-stream'); //Use Conventional text streams
 
+var AppConfig = require("./appConfig");
+
 function logError(error) {
     return gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.message));
 }
@@ -45,6 +47,7 @@ gulp.task('js', function () {
     })
     .bundle()
     .pipe(source('bundle.js'))
+    .pipe(replace("@MapboxApiKey@", AppConfig.mapboxApiKey))
     .pipe(gutil.env.prod ? streamify(uglify()) : gutil.noop())
     .on('error', logError)
     .pipe(gulp.dest(config.paths.dist + '/scripts'));
@@ -59,6 +62,7 @@ gulp.task('css', function () {
 
 gulp.task('styles', function () {
     gulp.src(config.paths.styles)
+        .pipe(replace("@OpenMapTilesApiKey@", AppConfig.openMapTilesApiKey))
         .pipe(gulp.dest(config.paths.dist + '/styles'));
 });
 
