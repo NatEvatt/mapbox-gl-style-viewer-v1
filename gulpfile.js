@@ -71,6 +71,11 @@ gulp.task('html', function () {
         .pipe(gulp.dest(config.paths.dist));
 });
 
+gulp.task('images', function () {
+    gulp.src(config.paths.images)
+        .pipe(gulp.dest(config.paths.dist + '/images'));
+});
+
 gulp.task('watch', function () {
 //    gulp.watch(config.paths.html, ['nunjucks.render']);
 //    gulp.watch(config.paths.precompiled, ['nunjucks.precompile']);
@@ -104,7 +109,7 @@ gulp.task('nunjucks.precompile', function () {
 
 gulp.task('nunjucks', ['nunjucks.render', 'nunjucks.precompile']);
 
-gulp.task('default', ['html', 'js', 'css', 'watch', 'styles']);
+gulp.task('default', ['html', 'js', 'css', 'watch', 'styles', 'images']);
 
 // to minify:
 //      gulp build --prod

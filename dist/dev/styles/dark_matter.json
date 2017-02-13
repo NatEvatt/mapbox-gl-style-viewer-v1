@@ -28,6 +28,14 @@
   "zoom": 3.8053494517746405,
   "bearing": 0,
   "pitch": 0,
+  "sources": {
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://free.tilehosting.com/data/v3.json?key=iCDpHi9gsjf1TnT0iI1T"
+    }
+  },
+  "sprite": "https://openmaptiles.github.io/dark-matter-gl-style/sprite",
+  "glyphs": "https://free.tilehosting.com/fonts/{fontstack}/{range}.pbf?key=iCDpHi9gsjf1TnT0iI1T",
   "layers": [
     {
       "id": "background",
