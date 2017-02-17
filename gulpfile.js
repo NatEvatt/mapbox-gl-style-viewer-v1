@@ -40,6 +40,23 @@ var config = {
 //    .pipe(gulp.dest(config.paths.dist + '/scripts'));
 //});
 
+// make sprites
+gulp.task('sprites', ['clean'], function(cb) {
+    makeDir(['./app/assets/font']);
+    exec('npm run makesprite -- ./app/assets/sprite ' + path.join(stylePath, '/svg'), function (err, stdout, stderr) {
+      console.log('Generating sprites...');
+      exec('npm run makesprite -- --retina ./app/assets/sprite@2x ' + path.join(stylePath, '/svg'), function (err, stdout, stderr) {
+        console.log('Generating retina sprites...');
+        cb();
+      });
+    });
+});
+
+// wipe old assets folder
+gulp.task('clean', function() {
+  return gulp.src(['./app/assets'], {read: false})
+    .pipe(clean());
+});
 
 gulp.task('js', function () {
     browserify(config.paths.mainJs, {

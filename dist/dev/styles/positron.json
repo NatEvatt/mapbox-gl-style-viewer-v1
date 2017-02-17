@@ -34,7 +34,7 @@
       "url": "https://free.tilehosting.com/data/v3.json?key=iCDpHi9gsjf1TnT0iI1T"
     }
   },
-  "sprite": "https://openmaptiles.github.io/positron-gl-style/sprite",
+  "sprite": "http://awesome.dev/git/mapbox-gl-style-viewer/dist/dev/styles/positron/sprite",
   "glyphs": "https://free.tilehosting.com/fonts/{fontstack}/{range}.pbf?key=iCDpHi9gsjf1TnT0iI1T",
   "layers": [
     {

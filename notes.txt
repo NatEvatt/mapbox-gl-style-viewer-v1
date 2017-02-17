@@ -10,3 +10,4 @@ get watch working
 get download of styles working jszip
 cretae config file of styles
 get modules and browserify working
+https://github.com/jingsam
