@@ -11,3 +11,16 @@ get download of styles working jszip
 cretae config file of styles
 get modules and browserify working
 https://github.com/jingsam
+
+
+
+
+shield
+square
+circle-12
+shieldp-sm
+asterisk
+hill
+x
+plus
+hexagon

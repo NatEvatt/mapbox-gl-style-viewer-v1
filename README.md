@@ -1,5 +1,5 @@
 # mapbox-gl-styles-viewer
-A tool for viewing mapbox-gl styles.  See it live [here](http://natsmaps.com/mapbox-gl-style-viewer/)
+A tool for viewing mapbox-gl styles.  See it live [here](http://natsmaps.com/mapbox-gl-style-viewer/dist/dev/index.html)
 
 The styles that you can view are based off [awesome-mapbox-gl-styles](https://github.com/NatEvatt/awesome-mapbox-gl-styles).  In future releases the tool will allow downloading and uploading of styles.  Pull requests are welcome.
 
