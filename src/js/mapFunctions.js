@@ -22,7 +22,11 @@ var MapFunctions = function () {
     var changeBasemap = function (selectedItem) {
         var selectedBasemap = $(selectedItem).text();
         var basemapId = $(selectedItem).attr('id');
-        if (basemapId.charAt(0) == "_") {
+        var dataSource = $(selectedItem).attr('data-source');
+        console.log("The data source is " + dataSource);
+        if (typeof dataSource !== 'undefined') {
+            handleMyMapbox(dataSource);
+        } else if (basemapId.charAt(0) == "_") {
             handleMapboxBasemap(basemapId);
         } else {
             map.setStyle("styles/" + basemapId + ".json");
@@ -35,6 +39,10 @@ var MapFunctions = function () {
     var handleMapboxBasemap = function (basemap) {
         //Only for Mapbox styles where the style.json is not in the style folder
         map.setStyle('mapbox://styles/mapbox/' + basemap.substring(1));
+    };
+    
+    var handleMyMapbox = function(dataSource){
+        map.setStyle(dataSource);
     };
 
     var updateMapOptions = function (mapOptions) {
